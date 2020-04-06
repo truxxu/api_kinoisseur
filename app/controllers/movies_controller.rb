@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
 
   # GET /movies
   def index
-    @movies = Movie.all
-
+    @genre = Genre.find(params[:genre_id])
+    @movies = @genre.movies.order('rating DESC')
     render json: @movies
   end
 

@@ -18,7 +18,7 @@ genreList.each do |item|
   puts 'Succesfully created 10 genres'
   puts "Creating 10 fake movies for #{item}"
 
-  10.times do
+  50.times do
     movieInstance = Movie.new(
       title: Faker::Book.title,
       rating: rand(2..5.0).round(1),

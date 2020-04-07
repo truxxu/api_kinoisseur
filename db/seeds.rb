@@ -11,7 +11,7 @@ genreList = ['Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Fantasy',
 genreList.each do |item|
   genreInstance = Genre.new(
     name: item,
-    url: Faker::LoremFlickr.image(size: "300x200", search_terms: ['movies'])
+    url: "https://i.picsum.photos/id/#{rand(100..300)}/300/200.jpg"
   )
   genreInstance.save!
 

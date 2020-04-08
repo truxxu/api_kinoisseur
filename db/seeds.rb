@@ -25,8 +25,8 @@ genreList.each do |item|
       director: Faker::Name.name,
       year: rand(1960..2020),
       duration: rand(90..180),
-      synopsys: Faker::Lorem.paragraphs,
-      url: Faker::LoremFlickr.image(size: "300x200", search_terms: ['movies']),
+      synopsys: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
+      url: "https://i.picsum.photos/id/#{rand(100..300)}/300/200.jpg",
       genre_id: genreInstance.id
     )
     movieInstance.save!

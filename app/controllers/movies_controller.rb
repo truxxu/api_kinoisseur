@@ -5,7 +5,9 @@ class MoviesController < ApplicationController
   def index
     @genre = Genre.find(params[:genre_id])
     @movies = @genre.movies.order('rating DESC')
-    render json: @movies
+    @movies = @genre.movies.order("#{params[:sort]} #{params[:order]}")
+    @paginated_movies = @movies.paginate(page: params[:page], per_page: 10)
+    render json: @paginated_movies
   end
 
   # GET /movies/1
